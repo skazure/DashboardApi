@@ -1,0 +1,36 @@
+[{
+    "requestId": 1,
+    "reminderType": "Approval",
+    "expiringOn": "01.01.2020"
+},
+{
+    "requestId": 2,
+    "reminderType": "Implementation",
+    "expiringOn": "01.01.2020"
+},
+{
+    "requestId": 3,
+    "reminderType": "Expiring",
+    "expiringOn": "01.01.2020"
+},
+{
+    "requestId": 4,
+    "reminderType": "Renewal",
+    "expiringOn": "01.01.2020"
+},
+{
+    "requestId": 5,
+    "reminderType": "Approval",
+    "expiringOn": "01.01.2020"
+},
+{
+    "requestId": 6,
+    "reminderType": "Expiring",
+    "expiringOn": "01.01.2020"
+},
+{
+    "requestId": 7,
+    "reminderType": "Implementation",
+    "expiringOn": "01.01.2020"
+}
+]

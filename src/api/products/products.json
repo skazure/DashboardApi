@@ -1,0 +1,38 @@
+[{
+    "productId": 1,
+    "productName": "Product 1",
+    "price": 1001
+},
+{
+    "productId": 2,
+    "productName": "Product 3",
+    "price": 1003
+},
+
+{
+    "productId": 3,
+    "productName": "Product 3",
+    "price": 1003
+},
+{
+    "productId": 4,
+    "productName": "Product 4",
+    "price": 1004
+},
+{
+    "productId": 5,
+    "productName": "Product 5",
+    "price": 1005
+},
+{
+    "productId": 6,
+    "productName": "Product 6",
+    "price": 1006
+},
+{
+    "productId": 7,
+    "productName": "Product 7",
+    "price": 1007
+}
+
+]
