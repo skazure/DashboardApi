@@ -9,7 +9,7 @@ import { catchError, tap } from 'rxjs/operators'
 })
 export class ReminderService {
 
-  private remindersUrl = "api/reminders/reminders.json"
+  private remindersUrl = "http://localhost:59730/api/Reminder";  // "api/reminders/reminders.json"
 
   constructor(private http: HttpClient) { }
 
