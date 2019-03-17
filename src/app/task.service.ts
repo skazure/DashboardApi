@@ -9,7 +9,7 @@ import { tap, catchError } from 'rxjs/operators';
 })
 export class TaskService {
 
-  private tasksUrl = "http://localhost:59730/api/Task";  // "api/tasks/tasks.json";
+  private tasksUrl =   "http://webapi.localhost.net/api/UserTasks"; // "http://lohcalhost:59730/api/UserTasks";   // "api/tasks/tasks.json";
 
   constructor(private http: HttpClient) { }
 
