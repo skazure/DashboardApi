@@ -9,6 +9,7 @@ import { ProductComponent } from './ui/product/product.component';
 import { ProductService } from './product.service';
 import { ReminderService } from './reminder.service';
 import { TaskService } from './task.service';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,15 @@ import { TaskService } from './task.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    UiModule,       
+    UiModule,   
+    FormsModule,  
+    ReactiveFormsModule,  
     RouterModule.forRoot([
     { 
       path: 'home', component: ProductComponent}    
      ])
   ],
-  providers: [ProductService, ReminderService, TaskService],
+  providers: [HttpClientModule,ProductService, ReminderService, TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -16,7 +16,25 @@
           </tbody>
         </table>
       </div>
+
+      <div class="card-body">
+          <h4>Create New Product</h4>
+          <form #f="ngForm" (ngSubmit)="onProductSubmit(f)" novalidate>
+            <div class="form-group">
+              <label for="name">ProductId</label>
+              <input name="ProductId" ngModel required #first="ngModel"><br>
+              <label for="name">Product Name</label>
+              <input name="ProductName" ngModel><br>
+              <label for="name">Product Price</label>
+              <input name="Price" ngModel><br>
+              <button>Submit</button>
+              </div>
+          </form>
+          </div>
+
     </div>
+    
+    
   </div>
 
   <div class="col-xl-6 col-sm-6 mb-3">
@@ -36,7 +54,28 @@
           </tbody>
         </table>
       </div>
+
+      <div class="card-body">
+          <h4>Create New Reminder</h4>
+              <form #f2="ngForm" (ngSubmit)="onReminderSubmit(f2)" novalidate>
+                  <div class="form-group">
+                  <label for="name">Request Id</label>
+                  <input name="RequestId" ngModel required #first="ngModel"><br>
+                  <label for="name">Task Type</label>
+                  <input name="ReminderType" ngModel><br>
+                  <label for="name">Expiring On</label>
+                  <input name="ExpiringOn" ngModel><br>
+                  <button>Submit</button>
+                  </div>
+              </form>
+       </div>
+
+      
+
     </div>
+
+    
+
   </div>
 </div>
 
@@ -59,26 +98,28 @@
           </tbody>
         </table>
       </div>
+
+      <div class="card-body">
+          <h4>Create New Task</h4>
+          <form #f1="ngForm" (ngSubmit)="onTaskSubmit(f1)" novalidate>
+              <div class="form-group">
+              <label for="name">Task Id</label>
+              <input name="TaskId" ngModel required #first="ngModel"><br>
+              <label for="name">Task Type</label>
+              <input name="TaskType" ngModel><br>
+              <label for="name">Assigned On</label>
+              <input name="AssignedOn" ngModel><br>
+              <button>Submit</button>
+              </div>
+          </form>
+          </div>
     </div>
   </div>
 
   <div class="col-xl-6 col-sm-6 mb-3">
     <div class="text-white bg-danger o-hidden h-100">
-      <div class="card-body">
-        <table class="table-bordered table-striped table-dark">
-          <thead></thead>
-          <td> Product Id </td>
-          <td> Product Name </td>
-          <td> Price </td>
-          <tbody>
-            <tr *ngFor="let product of products">
-              <td>{{ product.ProductId }}</td>
-              <td>{{ product.ProductName }}</td>
-              <td>{{ product.Price }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      
+      
     </div>
   </div>
 </div>

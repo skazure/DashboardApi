@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
 import { IProduct } from './products';
 import { catchError, tap } from 'rxjs/operators';
+import { ITask } from './tasks';
+import { IReminder } from './reminders';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,9 @@ import { catchError, tap } from 'rxjs/operators';
 export class ProductService {
 
   private productUrl =  "http://webapi.localhost.net/api/Users"; //"http://localhost:59730/api/Users";   //"api/products/products.json"
+  private productUpdateUrl = "http://webapi.localhost.net/api/Users";
 
+ 
   constructor(private http: HttpClient) { }
 
   getProducts(): Observable<IProduct[]> {
@@ -20,6 +24,13 @@ export class ProductService {
     catchError(this.handleError)); 
 
   }
+
+  createProduct(product: IProduct): Observable<IProduct> {  
+    console.log("Inside product create service");
+  const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'}) };  
+  return this.http.post<IProduct>(this.productUpdateUrl + '/', product, httpOptions);
+}
+
 
   private handleError(err: HttpErrorResponse){
 

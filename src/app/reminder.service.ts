@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { IReminder } from './reminders';
 import { throwError, Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators'
@@ -10,6 +10,7 @@ import { catchError, tap } from 'rxjs/operators'
 export class ReminderService {
 
   private remindersUrl =  "http://webapi.localhost.net/api/Reminders";   //"http://localhost:59730/api/Reminders";  // "api/reminders/reminders.json"
+  private reminderUpdateUrl = "http://webapi.localhost.net/api/Reminders";
 
 
   constructor(private http: HttpClient) { }
@@ -20,6 +21,13 @@ export class ReminderService {
     tap (data => console.log('All reminders: ' + JSON.stringify(data))),
     catchError(this.handleError)); 
   }
+
+  
+
+createReminder(reminder: IReminder): Observable<IReminder> {  
+  const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'}) };  
+  return this.http.post<IReminder>(this.reminderUpdateUrl + '/', reminder, httpOptions);
+}
 
   private handleError(err: HttpErrorResponse){
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { ITask } from './tasks';
 import { throwError, Observable } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
@@ -10,6 +10,7 @@ import { tap, catchError } from 'rxjs/operators';
 export class TaskService {
 
   private tasksUrl =   "http://webapi.localhost.net/api/UserTasks"; // "http://lohcalhost:59730/api/UserTasks";   // "api/tasks/tasks.json";
+  private taskUpdateUrl = "http://webapi.localhost.net/api/UserTasks";
 
   constructor(private http: HttpClient) { }
 
@@ -34,5 +35,10 @@ export class TaskService {
     console.error(errorMessage);
     return throwError(errorMessage);
   } 
+
+  createTask(task: ITask): Observable<ITask> {  
+    const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'}) };  
+    return this.http.post<ITask>(this.taskUpdateUrl + '/', task, httpOptions);
+  }
 
 }
