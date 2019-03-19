@@ -17,21 +17,7 @@
         </table>
       </div>
 
-      <div class="card-body">
-          <h4>Create New Product</h4>
-          <form #f="ngForm" (ngSubmit)="onProductSubmit(f)" novalidate>
-            <div class="form-group">
-              <label for="name">ProductId</label>
-              <input name="ProductId" ngModel required #first="ngModel"><br>
-              <label for="name">Product Name</label>
-              <input name="ProductName" ngModel><br>
-              <label for="name">Product Price</label>
-              <input name="Price" ngModel><br>
-              <button>Submit</button>
-              </div>
-          </form>
-          </div>
-
+      
     </div>
     
     
@@ -55,20 +41,7 @@
         </table>
       </div>
 
-      <div class="card-body">
-          <h4>Create New Reminder</h4>
-              <form #f2="ngForm" (ngSubmit)="onReminderSubmit(f2)" novalidate>
-                  <div class="form-group">
-                  <label for="name">Request Id</label>
-                  <input name="RequestId" ngModel required #first="ngModel"><br>
-                  <label for="name">Task Type</label>
-                  <input name="ReminderType" ngModel><br>
-                  <label for="name">Expiring On</label>
-                  <input name="ExpiringOn" ngModel><br>
-                  <button>Submit</button>
-                  </div>
-              </form>
-       </div>
+      
 
       
 
@@ -99,26 +72,49 @@
         </table>
       </div>
 
-      <div class="card-body">
-          <h4>Create New Task</h4>
-          <form #f1="ngForm" (ngSubmit)="onTaskSubmit(f1)" novalidate>
-              <div class="form-group">
-              <label for="name">Task Id</label>
-              <input name="TaskId" ngModel required #first="ngModel"><br>
-              <label for="name">Task Type</label>
-              <input name="TaskType" ngModel><br>
-              <label for="name">Assigned On</label>
-              <input name="AssignedOn" ngModel><br>
-              <button>Submit</button>
-              </div>
-          </form>
-          </div>
+      
     </div>
   </div>
 
   <div class="col-xl-6 col-sm-6 mb-3">
     <div class="text-white bg-danger o-hidden h-100">
       
+      <div class="card-body">
+        <h4>Create New Product</h4>
+        <form #f="ngForm" (ngSubmit)="onProductSubmit(f)" novalidate>
+          <div class="form-group">              
+            <input name="ProductId" ngModel required #first="ngModel" placeholder="Product Id"><br>              
+            <input name="ProductName" ngModel placeholder="Product Name"><br>              
+            <input name="Price" ngModel placeholder="Product Price"><br>
+            <button class="btn btn-dark">Submit</button>
+            </div>
+        </form>
+        </div>
+
+        <div class="card-body">
+          <h4>Create New Reminder</h4>
+              <form #f2="ngForm" (ngSubmit)="onReminderSubmit(f2)" novalidate>
+                  <div class="form-group">                  
+                  <input name="RequestId" ngModel required #first="ngModel" placeholder="Request Id"><br>                  
+                  <input name="ReminderType" ngModel placeholder="Task Type"><br>                  
+                  <input name="ExpiringOn" ngModel placeholder="Expiring On"><br>
+                  <button class="btn btn-dark">Submit</button>
+                  </div>
+              </form>
+         </div>
+
+         <div class="card-body">
+          <h4>Create New Task</h4>
+          <form #f1="ngForm" (ngSubmit)="onTaskSubmit(f1)" novalidate>
+              <div class="form-group">              
+              <input name="TaskId" ngModel required #first="ngModel" placeholder="Task Id"><br>              
+              <input name="TaskType" ngModel placeholder="Task Type"><br>              
+              <input name="AssignedOn" ngModel placeholder="Assigned On"><br>
+              <button class="btn btn-dark">Submit</button>
+              </div>
+          </form>
+          </div>
+
       
     </div>
   </div>
