@@ -5,11 +5,7 @@ pipeline{
 
   stages {
 
-      stage ('Change directory') {
-        steps { 
-              bat label: '', script: 'cd C:\\temp\\workspace'
-        }
-      }
+      
 
         stage('Git Clone') {
             steps {
@@ -18,12 +14,12 @@ pipeline{
             }
         }
 
-        stage('Npm Install') {
-            steps {
-                echo 'Npm Installa..'
-                //npm install
-            }
-        }        
+        stage ('Npm Install') {
+        steps { 
+              bat label: '', script: 'npm install'
+        }
+      }
+            
 
         stage('Test') {
             steps {
