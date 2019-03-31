@@ -17,23 +17,16 @@ pipeline{
         stage('Git Clone') {
             steps {
                 echo 'Cloning..'
-                git 'https://github.com/skazure/DashboardApi.git'
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/skazure/DashboardApi.git']]])
             }
         }
 
         stage('Npm Install') {
             steps {
                 echo 'Npm Installa..'
-                npm install
+                //npm install
             }
-        }
-        
-        stage('Build- Npm Install') {
-            steps {
-                echo 'Building..'
-                //npm run ng -- build --prod
-            }
-        }
+        }        
 
         stage('Test') {
             steps {
