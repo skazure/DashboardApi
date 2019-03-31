@@ -5,7 +5,7 @@ pipeline{
 
   stages {
 
-      stage () {
+      stage ('Change directory') {
         steps { 
               dir('C:/temp/workspace') 
               {
