@@ -1,8 +1,12 @@
 pipeline{
-  agent { label 'nodejs8' }
+  agent { label 'nodejs8' }  
 
-  stage('check tools') {
+  stages{
+
+      stage('check tools') {
         "node -v"
         "npm -v"
-    }  
+    }
+    
+  }
 }
