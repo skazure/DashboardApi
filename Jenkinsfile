@@ -1,16 +1,23 @@
 pipeline{
   agent any
 
-  dir('C:/temp/workspace') {
-    echo 'workspace changed'
-   }
+  
 
   stages {
+
+      stage () {
+        steps { 
+              dir('C:/temp/workspace') 
+              {
+                  echo 'workspace changed'
+              }
+        }
+      }
 
         stage('Git Clone') {
             steps {
                 echo 'Cloning..'
-                git clone 'https://github.com/skazure/DashboardApi.git'
+                git 'https://github.com/skazure/DashboardApi.git'
             }
         }
 
