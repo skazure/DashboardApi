@@ -16,10 +16,15 @@ pipeline{
 
         stage ('Npm Install') {
         steps { 
-              bat label: '', script: 'npm install'
+              bat label: 'Installing dependencies', script: 'npm install'
         }
       }
-            
+
+        stage ('Angular Build') {
+        steps { 
+              bat label: 'Building the Angular App', script: 'npm run ng -- build --prod'
+        }
+      }  
 
         stage('Test') {
             steps {
