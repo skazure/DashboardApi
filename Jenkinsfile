@@ -1,12 +1,21 @@
 pipeline{
-  agent { label 'nodejs8' }  
+  agent any
 
-  stages{
-
-      stage('check tools') {
-        "node -v"
-        "npm -v"
+  stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
-    
-  }
 }
