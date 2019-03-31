@@ -21,11 +21,20 @@ pipeline{
             }
         }
 
-        stage('Build') {
+        stage('Npm Install') {
             steps {
-                echo 'Building..'
+                echo 'Npm Installa..'
+                npm install
             }
         }
+        
+        stage('Build- Npm Install') {
+            steps {
+                echo 'Building..'
+                npm run ng -- build --prod
+            }
+        }
+
         stage('Test') {
             steps {
                 echo 'Testing..'
