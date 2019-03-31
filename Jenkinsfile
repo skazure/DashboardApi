@@ -31,7 +31,7 @@ pipeline{
         stage('Build- Npm Install') {
             steps {
                 echo 'Building..'
-                npm run ng -- build --prod
+                //npm run ng -- build --prod
             }
         }
 
