@@ -7,10 +7,7 @@ pipeline{
 
       stage ('Change directory') {
         steps { 
-              dir('C:/temp/workspace') 
-              {
-                  echo 'workspace changed'
-              }
+              bat label: '', script: 'cd C:\\temp\\workspace'
         }
       }
 
