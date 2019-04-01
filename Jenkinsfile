@@ -1,18 +1,15 @@
 pipeline{
-  agent any
+  agent any  
 
-  
+  stages {      
 
-  stages {
-
-      
-
-        stage('Git Clone') {
-            steps {
-                echo 'Cloning..'
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/skazure/DashboardApi.git']]])
-            }
-        }
+        // Checkout not required
+        // stage('Git Clone') {
+        //     steps {
+        //         echo 'Cloning..'
+        //         checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/skazure/DashboardApi.git']]])
+        //     }
+        // }
 
         stage ('Npm Install') {
         steps { 
@@ -22,7 +19,7 @@ pipeline{
 
         stage ('Angular Build') {
         steps { 
-              bat label: 'Building the Angular App', script: 'npm run ng -- build --prod'
+              bat label: 'Building the Angular App with prod configuration', script: 'npm run ng -- build --prod'
         }
       }  
 
