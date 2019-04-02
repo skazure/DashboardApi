@@ -26,13 +26,13 @@ pipeline{
         stage('Test') {
             steps {
                 echo 'Testing..'
-                bat label: 'Testing the Angular App with prod configuration', script: 'npm run ng test'
+               // bat label: 'Testing the Angular App with prod configuration', script: 'npm run ng test'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                bat label: 'Deploying the Angular App with prod configuration', script: 'xcopy /s /y "C:\Program Files (x86)\Jenkins\workspace\DashboardCICDPipeline\dist\DashboardApi" "C:\inetpub\wwwroot\Dashboard"''fg
+                bat label: 'Testing the Angular App with prod configuration', script: 'xcopy /s /y "C:\Program Files (x86)\Jenkins\workspace\DashboardCICDPipeline\dist\DashboardApi" "C:\inetpub\wwwroot\Dashboard"''
             }
         }
     }
