@@ -32,6 +32,7 @@ pipeline{
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                bat label: 'Deploying the Angular App with prod configuration', script: 'xcopy /s /y "C:\Program Files (x86)\Jenkins\workspace\DashboardCICDPipeline\dist\DashboardApi" "C:\inetpub\wwwroot\Dashboard"''fg
             }
         }
     }
