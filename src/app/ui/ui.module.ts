@@ -5,12 +5,13 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductComponent } from './product/product.component';
 import { FormsModule } from '@angular/forms';
+import { ProductService } from '../product.service';
 
 @NgModule({
-  declarations: [LayoutComponent, HeaderComponent, FooterComponent, ProductComponent],
+  declarations: [ProductComponent,LayoutComponent, HeaderComponent, FooterComponent],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule    
   ],
   exports: [LayoutComponent]
 })

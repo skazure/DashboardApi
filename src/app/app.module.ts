@@ -11,6 +11,7 @@ import { ReminderService } from './reminder.service';
 import { TaskService } from './task.service';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -21,7 +22,7 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
     HttpClientModule,
     UiModule,   
     FormsModule,  
-    ReactiveFormsModule,  
+    ReactiveFormsModule,      
     RouterModule.forRoot([
     { 
       path: 'home', component: ProductComponent}    

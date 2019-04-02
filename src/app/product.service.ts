@@ -3,8 +3,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { throwError, Observable } from 'rxjs';
 import { IProduct } from './products';
 import { catchError, tap } from 'rxjs/operators';
-import { ITask } from './tasks';
-import { IReminder } from './reminders';
+
 
 @Injectable({
   providedIn: 'root'
