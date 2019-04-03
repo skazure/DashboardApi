@@ -26,7 +26,7 @@ pipeline{
         stage('Test') {
             steps {
                 echo 'Testing..'
-                bat label: 'Testing the Angular App with prod configuration', script: 'npm run ng test'
+                //bat label: 'Testing the Angular App with prod configuration', script: 'npm run ng test'
             }
         }
         stage('Deploy') {
