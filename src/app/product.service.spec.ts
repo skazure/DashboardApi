@@ -4,7 +4,9 @@ import { ProductService } from './product.service';
 import { HttpClientModule } from '@angular/common/http';
 
 describe('ProductService', () => {
+
   beforeEach(() => TestBed.configureTestingModule({
+    providers: [ProductService],
     imports: [HttpClientModule]}));
 
   it('should be created', () => {
