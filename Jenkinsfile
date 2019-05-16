@@ -13,13 +13,13 @@ pipeline{
 
         stage ('Npm Install') {
         steps { 
-              script: 'npm install'
+              sh "npm install"
         }
       }
 
         stage ('Angular Build') {
         steps { 
-              script: 'npm run ng -- build --prod'
+              sh "npm run ng -- build --prod"
         }
       }  
 
@@ -32,7 +32,7 @@ pipeline{
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-               // script: 'xcopy /s /y "C:\\Program Files (x86)\\Jenkins\\workspace\\DashboardCICDPipeline\\dist\\DashboardApi" "C:\\inetpub\\wwwroot\\Dashboard"'
+               // script: 'xcopy /s /y "C:\\Program Files (x86)\\Jenkins\\workspace\\DashboardCICDPipeline\\dist\\DashboardApi" "C:\\inetpub\\wwwroot\\Dashboard"'git 
             }
         }
     }
