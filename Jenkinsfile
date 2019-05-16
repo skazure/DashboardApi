@@ -13,7 +13,7 @@ pipeline{
 
         stage ('Npm Install') {
         steps { 
-              sh "sudo npm install"
+              sh "npm install"
         }
       }
 
