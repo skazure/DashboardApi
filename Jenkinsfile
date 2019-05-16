@@ -26,7 +26,7 @@ pipeline{
         stage('Test') {
             steps {
                 echo 'Testing..'
-                script: 'npm run ng test --progress false --watch false'
+                sh "npm run ng test --progress false --watch false"
             }
         }
         stage('Deploy') {
