@@ -20,6 +20,8 @@ pipeline{
         stage ('Angular Build') {
         steps { 
               sh "npm run ng -- build --prod"
+              echo "Current directory on build server"
+              sh "pwd"
         }
       }  
 
