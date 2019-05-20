@@ -13,7 +13,7 @@ pipeline{
 
 stage ('Docker build stage') {
         steps { 
-              sh "sudo docker build -t dashboardapi:prod ."
+              sh "docker build -t dashboardapi:prod ."
         }
       }
 
