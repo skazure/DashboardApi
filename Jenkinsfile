@@ -13,6 +13,8 @@ pipeline{
 
 stage ('Docker build stage') {
         steps { 
+              echo "$USER"
+              sh "sudo usermod -a -G docker $USER"
               sh "docker build -t dashboardapi:prod ."
         }
       }
