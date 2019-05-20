@@ -11,6 +11,12 @@ pipeline{
         //     }
         // }
 
+stage ('Docker build stage') {
+        steps { 
+              sh "docker build -t dashboardapi:prod ."
+        }
+      }
+
         stage ('Npm Install') {
         steps { 
               sh "npm install"
